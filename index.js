@@ -1,5 +1,5 @@
 var a = "";
-let count = 0;
+let count = false;
 var opp = ["%","/","*","-","+"]
 
 function buttonAnimation(currentKey){
@@ -25,7 +25,7 @@ $("button").click(function(){
         if (count){
             b=a;
             a="";
-            count=0;
+            count = false;
         }
         a+=textOfButtonClicked;
         if (opp.includes(a[0])){
@@ -36,10 +36,12 @@ $("button").click(function(){
     else if(mainClassOfButtonClicked == "bss"){
         a=a.slice(0, -1);
         $("h1").text(a);
+        count = false;
     }
     else if(mainClassOfButtonClicked == "acc"){
         a="";
         $("h1").text("0");
+        count = false;
     }
     else{
         console.log(a);
@@ -51,7 +53,7 @@ $("button").click(function(){
         else{
             a=a.toString(); }
         $("h1").text(a);
-        count = 1;
+        count = true;
     }
     buttonAnimation(mainClassOfButtonClicked)
 });
