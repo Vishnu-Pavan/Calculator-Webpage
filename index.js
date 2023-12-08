@@ -44,12 +44,12 @@ $("button").click(function(){
     else{
         console.log(a);
         console.log(eval(a));
-        if (a.includes(".")){
-            a=eval(a).toFixed(2).toString();
+        a=eval(a);
+        if (a%1!=0){
+            a=a.toFixed(2).toString();
         }
         else{
-            a=eval(a).toString();
-        }
+            a=a.toString(); }
         $("h1").text(a);
         count = 1;
     }
