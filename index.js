@@ -10,12 +10,15 @@ function buttonAnimation(currentKey){
     },100);
 }
 
+// $(document).keydown(function(event){
+//     console.log(event.key)
+//     var keyTextOfButtonClicked = event.key;
+//     console.log(event.key)
+// })
+
 $("button").click(function(){
     // text in button
     var textOfButtonClicked=$(this).text();
-
-    // class is digit or symbol of button
-    var classOfButtonClicked=$(this).attr('class').substring(4,11);
 
     // main class of button
     var mainClassOfButtonClicked=$(this).attr('class').substring(11,14);
@@ -45,8 +48,8 @@ $("button").click(function(){
         count = false;
     }
     else{
-        console.log(a);
-        console.log(eval(a));
+        // console.log(a);
+        // console.log(eval(a));
         a=eval(a);
         if (a%1!=0){
             a=a.toFixed(2).toString();
