@@ -20,18 +20,19 @@ $("button").click(function(){
     // main class of button
     var mainClassOfButtonClicked=$(this).attr('class').substring(11,14);
 
-
     if (mainClassOfButtonClicked!= "acc" && mainClassOfButtonClicked!= "bss" && mainClassOfButtonClicked!= "equ"){
-        if (count){
-            b=a;
-            a="";
-            count = false;
+        if(a.length<10){
+            if (count){
+                b=a;
+                a="";
+                count = false;
+            }
+            a+=textOfButtonClicked;
+            if (opp.includes(a[0])){
+                a=b+a;
+            }
+            $("h1").text(a);
         }
-        a+=textOfButtonClicked;
-        if (opp.includes(a[0])){
-            a=b+a;
-        }
-        $("h1").text(a);
     }
     else if(mainClassOfButtonClicked == "bss"){
         a=a.slice(0, -1);
